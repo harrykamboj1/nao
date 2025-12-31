@@ -35,12 +35,12 @@ export function SignForm({
 	footerLinkTo,
 }: SignFormProps) {
 	return (
-		<div className='container mx-auto max-w-md p-8'>
-			<h1 className='text-3xl font-bold mb-6'>{title}</h1>
-			<form onSubmit={onSubmit} className='space-y-4'>
+		<div className='container mx-auto w-full max-w-2xl p-12'>
+			<h1 className='text-4xl font-bold mb-8 text-center'>{title}</h1>
+			<form onSubmit={onSubmit} className='space-y-6'>
 				{fields.map((field) => (
-					<div key={field.id} className='space-y-2'>
-						<label htmlFor={field.id} className='text-sm font-medium'>
+					<div key={field.id} className='space-y-3'>
+						<label htmlFor={field.id} className='text-base font-medium'>
 							{field.label}
 						</label>
 						<Input
@@ -51,16 +51,17 @@ export function SignForm({
 							value={formData[field.name]}
 							onChange={onChange}
 							required
+							className='h-12 text-base'
 						/>
 					</div>
 				))}
 
-				<Button type='submit' className='w-full'>
+				<Button type='submit' className='w-full h-12 text-base'>
 					{submitButtonText}
 				</Button>
 			</form>
 
-			<div className='mt-6'>
+			<div className='mt-8'>
 				<div className='relative'>
 					<div className='absolute inset-0 flex items-center'>
 						<div className='w-full border-t border-gray-300' />

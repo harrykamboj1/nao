@@ -17,8 +17,9 @@ export const Header = () => {
 	if (!session) {
 		return (
 			<header className='flex items-center justify-between gap-4 px-4 py-2 border border-b'>
-				<Link to='/'>App</Link>
-				<div className='flex-1'></div>
+				<ButtonConnection>
+					<Link to='/'>App</Link>
+				</ButtonConnection>
 				<ButtonConnection>
 					<Link to='/signup'>Sign up</Link>
 				</ButtonConnection>
@@ -27,8 +28,9 @@ export const Header = () => {
 	}
 	return (
 		<header className='flex items-center justify-between gap-4 px-4 py-2 border border-b'>
-			<Link to='/'>App</Link>
-			<div className='flex-1'></div>
+			<ButtonConnection>
+				<Link to='/'>App</Link>
+			</ButtonConnection>
 			<form onSubmit={handleSignOut}>
 				<ButtonConnection>
 					<LogOut className='size-4' />
